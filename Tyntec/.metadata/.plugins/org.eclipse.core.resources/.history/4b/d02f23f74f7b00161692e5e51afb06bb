@@ -1,0 +1,11 @@
+package types;
+
+public enum EnumTypes {
+	ROCK, PAPER, SCISSORS, ;
+
+	public static EnumTypes randomTypes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

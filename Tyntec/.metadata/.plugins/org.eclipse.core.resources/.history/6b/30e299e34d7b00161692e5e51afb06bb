@@ -1,0 +1,16 @@
+package types;
+
+import org.java.test.tyntec.java_test_tyntec.RandomEnum;
+
+public class EnumTypes {
+
+    private enum Types { SCISSORS, PAPER, ROCK }
+
+    private static final RandomEnum<Season> r =    new RandomEnum<Season>(Season.class);
+
+    
+    
+    public static void main(String[] args) {
+        System.out.println(r.random());
+    }
+}

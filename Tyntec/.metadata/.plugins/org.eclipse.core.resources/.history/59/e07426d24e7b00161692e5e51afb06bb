@@ -1,0 +1,17 @@
+package types;
+
+import java.util.Random;
+
+public class EnumTypes {
+
+    private enum Types { SCISSORS, PAPER, ROCK }
+
+    private static final RandomEnum<Types> r =   new RandomEnum<Types>(Types.class);
+
+
+   
+    }
+//    public static void main(String[] args) {
+//        System.out.println(r.random());
+//    }
+}

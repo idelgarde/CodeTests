@@ -1,0 +1,8 @@
+package types;
+
+import java.util.Random;
+
+public enum EnumTypes {
+	ROCK, PAPER, SCISSORS, ;
+
+}

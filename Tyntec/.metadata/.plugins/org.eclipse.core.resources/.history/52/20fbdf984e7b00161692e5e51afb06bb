@@ -1,0 +1,29 @@
+package org.java.test.tyntec.java_test_tyntec;
+
+import java.util.Random;
+
+import types.EnumTypes;
+
+public class RandomEnum<E extends Enum> {
+
+	private static final Random RND = new Random();
+	private final E[] values;
+
+	public RandomEnum(Class<E> token) {
+		values = token.getEnumConstants();
+	}
+
+	public E random() {
+		return values[RND.nextInt(values.length)];
+	}
+	
+
+
+    
+    
+    public static void main(String[] args) {
+    	 private static final RandomEnum<EnumTypes> r =    new RandomEnum<EnumTypes>(Season.class);
+        System.out.println(r.random());
+    }
+
+}

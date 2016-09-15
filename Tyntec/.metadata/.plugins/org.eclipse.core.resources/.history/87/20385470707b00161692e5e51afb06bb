@@ -1,0 +1,30 @@
+package org.java.test.tyntec.main;
+
+import java.util.Map;
+
+import org.java.test.tyntec.main.core.GameCore;
+import org.java.test.tyntec.types.EnumTypes;
+
+/**
+ *  Main Class application
+ */
+public class App 
+{	
+	/*
+	 * The application is ready to be changed for a different playing choice for player A
+	 * If 
+	 */
+	final static EnumTypes playerAChoice = EnumTypes.PAPER;
+	final static int gamesAmount = 100;
+
+	
+	public static void main(String[] args) {
+		GameCore gc = new GameCore();
+
+		Map<String, Integer> results = gc.processRandomly(gamesAmount, playerAChoice);
+
+		System.out.println("Player A wins "+ results.get("A") +" of "+gamesAmount+" games");
+		System.out.println("Player B wins "+ results.get("B") +" of "+gamesAmount+" games");
+		System.out.println("Tie: "+ results.get("T") +" of "+gamesAmount+" games");
+	}
+}

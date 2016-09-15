@@ -1,0 +1,7 @@
+package types;
+
+public class EnumTypes {
+
+	private enum Season { SCISSORS, PAPER, ROCK }
+
+}

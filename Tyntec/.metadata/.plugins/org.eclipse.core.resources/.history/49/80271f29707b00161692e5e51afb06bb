@@ -1,0 +1,56 @@
+package org.java.test.tyntec.main.core;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.java.test.tyntec.types.EnumTypes;
+
+/**
+ * Processing class from choices comparison
+ */
+public class GameCore 
+{
+
+	private Map<String, Integer> results = new HashMap<String, Integer>();
+	private int victoryA = 0;
+	private int victoryB = 0;
+	private int ties = 0;
+
+	/*
+	 * Process Randomly 
+	 */
+	public Map<String, Integer> processRandomly(int gamesAmount, EnumTypes playerAChoice){
+		for(int i = 0; i<gamesAmount; i++){
+			EnumTypes playerBChoice = RandomEnum.randomTypes();
+			comparison(playerAChoice, playerBChoice);
+		}
+		results.put("A", victoryA);
+		results.put("B", victoryB);
+		results.put("T", ties);
+
+		return results;
+	}
+
+	public void comparison(EnumTypes playerAChoice, EnumTypes playerBChoice){
+		if (playerAChoice.equals(playerBChoice)) {
+			ties++;
+		}else if (playerAChoice.equals(EnumTypes.ROCK)) {
+			if (playerBChoice.equals(EnumTypes.SCISSORS)) 
+				victoryA++;
+			else if (playerBChoice.equals(EnumTypes.PAPER)) 
+				victoryB++;
+		}else if (playerAChoice.equals(EnumTypes.PAPER)) {
+			if (playerBChoice.equals(EnumTypes.SCISSORS)) 
+				victoryB++; 
+			else if (playerBChoice.equals(EnumTypes.ROCK)) 
+				victoryA++;
+		}else if (playerAChoice.equals(EnumTypes.SCISSORS)) {
+			if (playerBChoice.equals(EnumTypes.PAPER)) 
+				victoryA++; 
+			else if (playerBChoice.equals(EnumTypes.ROCK)) 
+				victoryB++;
+		}
+
+	}
+
+}
