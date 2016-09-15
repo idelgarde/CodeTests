@@ -1,0 +1,22 @@
+package org.java.test.tyntec.main;
+
+import java.util.Map;
+
+import org.java.test.tyntec.main.core.GameCore;
+
+/**
+ *  Main Class application
+ */
+public class App 
+{
+ 
+  public static void main(String[] args) {
+	  GameCore gc = new GameCore();
+	  int gamesAmount = 100;
+	  Map results = gc.processing(gamesAmount);
+	  
+	  System.out.println("Player A wins "+ results.get("A") +" of "+gamesAmount+" games");
+	  System.out.println("Player B wins "+ results.get("B") +" of "+gamesAmount+" games");
+	  System.out.println("Tie: "+ results.get("T") +" of "+gamesAmount+" games");
+  }
+}

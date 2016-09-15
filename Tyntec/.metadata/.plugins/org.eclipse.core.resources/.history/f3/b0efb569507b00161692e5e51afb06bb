@@ -1,0 +1,17 @@
+package org.java.test.tyntec.java;
+
+import java.util.Random;
+
+import org.java.test.tyntec.java.types.EnumTypes;
+
+public class RandomEnum{
+
+	/*
+	 * Method to Randomize the values from EnumTypes
+	 */
+	public static EnumTypes randomTypes(){
+		EnumTypes[] EnumTypess = EnumTypes.values();
+		Random generator = new Random();
+		return EnumTypess[generator.nextInt(EnumTypess.length)];
+	}
+}

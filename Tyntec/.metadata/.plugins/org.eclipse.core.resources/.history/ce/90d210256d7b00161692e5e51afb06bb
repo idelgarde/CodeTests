@@ -1,0 +1,7 @@
+package org.java.test.tyntec.types;
+/*
+ * Choose types
+ */
+public enum EnumTypes {
+	ROCK, PAPER, SCISSORS, ;
+}

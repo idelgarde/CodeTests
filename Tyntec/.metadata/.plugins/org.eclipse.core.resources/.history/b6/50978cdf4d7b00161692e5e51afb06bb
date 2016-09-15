@@ -1,0 +1,7 @@
+package types;
+
+public class EnumTypes {
+
+	private enum Types { SCISSORS, PAPER, ROCK }
+
+}

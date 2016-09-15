@@ -1,0 +1,13 @@
+package types;
+
+import java.util.Random;
+
+public enum EnumTypes {
+    A, B;
+
+public static EnumTypes EnumTypesAleatoria(){
+    EnumTypes[] EnumTypess = EnumTypes.values();
+    Random generator = new Random();
+    return EnumTypess[generator.nextInt(EnumTypess.length)];
+    }
+}

@@ -1,0 +1,67 @@
+package org.java.test.tyntec.main.core;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.java.test.tyntec.types.Types;
+
+/**
+ * Processing class from choices compareChoices
+ */
+public class GameCore 
+{
+	private Map<String, Integer> results = new HashMap<String, Integer>();
+	private int victoryA = 0;
+	private int victoryB = 0;
+	private int ties = 0;
+
+	/*
+	 * Process Randomly the amount of games decided at the start of the application
+	 * Return a map with the amount of games results
+	 */
+	public Map<String, Integer> processRandomly(int gamesAmount, Types playerAChoice){
+		for(int i = 0; i<gamesAmount; i++){
+			Types playerBChoice = RandomEnum.randomTypes();
+			compareChoices(playerAChoice, playerBChoice);
+		}
+		results.put("A", victoryA);
+		results.put("B", victoryB);
+		results.put("T", ties);
+		return results;
+	}
+
+	/*
+	 * Compare choices from users according to the game rules
+	 */
+	public void compareChoices(Types playerAChoice, Types playerBChoice){
+		if (playerAChoice.equals(playerBChoice)) {
+			ties++;
+		}else if (playerAChoice.equals(Types.ROCK)) {
+			if (playerBChoice.equals(Types.SCISSORS)) 
+				victoryA++;
+			else if (playerBChoice.equals(Types.PAPER)) 
+				victoryB++;
+		}else if (playerAChoice.equals(Types.PAPER)) {
+			if (playerBChoice.equals(Types.SCISSORS)) 
+				victoryB++; 
+			else if (playerBChoice.equals(Types.ROCK)) 
+				victoryA++;
+		}else if (playerAChoice.equals(Types.SCISSORS)) {
+			if (playerBChoice.equals(Types.PAPER)) 
+				victoryA++; 
+			else if (playerBChoice.equals(Types.ROCK)) 
+				victoryB++;
+		}
+
+	}
+
+	public String gameProcess(int gamesAmount){
+		String resultAsAString = "";
+		
+		resultAsAString = "Player A wins "+ results.get("A") +" of "+gamesAmount+" games";
+		resultAsAString += "\nPlayer B wins "+ results.get("B") +" of "+gamesAmount+" games";
+		resultAsAString += "\nTie: "+ results.get("T") +" of "+gamesAmount+" games";
+		return resultAsAString;
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package types;
+
+import java.util.Random;
+
+public class EnumTypes {
+
+    private enum Season { SCISSORS, PAPER, ROCK }
+
+    private static final RandomEnum<Season> r =    new RandomEnum<Season>(Season.class);
+
+
+   
+    }
+    
+    
+//    public static void main(String[] args) {
+//        System.out.println(r.random());
+//    }
+}

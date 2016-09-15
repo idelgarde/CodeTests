@@ -1,0 +1,11 @@
+import java.util.Random;
+
+public enum EnumTypes {
+    A, B;
+
+public static Via viaAleatoria(){
+    Via[] vias = Via.values();
+    Random generator = new Random();
+    return vias[generator.nextInt(vias.length)];
+    }
+}
